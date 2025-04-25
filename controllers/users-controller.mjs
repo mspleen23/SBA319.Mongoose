@@ -45,9 +45,30 @@ async function createUser(req,res){
     }
 }
 
+async function renderNewForm(req,res) {
+    try{
+        res.render('./users/new.ejs');
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+}
+
+async function deleteUser(req,res){
+        try{
+            const user = await User.findByIdAndDelete(req.params.id) 
+            res.status(301).redirect('/users')
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+}
+
+
+
 
 export{
     seedUsers,
     getUsers,
-    createUser
+    createUser,
+    renderNewForm,
+    deleteUser,
 }

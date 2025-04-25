@@ -19,14 +19,23 @@ usersRouter.get('/seed', usersController.seedUsers)
 //Index
 usersRouter.get('/', usersController.getUsers);
 
-//New
+//New- Renders a form where the user can create a new user. Submitting this form will call the CREATE user route
+usersRouter.get('/new', usersController.renderNewForm);
 
 //Delete
+usersRouter.delete('/:id', usersController.deleteUser);
 
 //Update
 
+
 //Create
 usersRouter.post('/', usersController.createUser);
+
+//Edit- this would rendr a form similar to the userRouter.get (render new Form) 
+
+
+//Show (render a route for an indicidual to be seen )(create it)
+//get a specific user instead of all the users 
 
 
 

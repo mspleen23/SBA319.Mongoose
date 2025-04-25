@@ -2,6 +2,9 @@ import {config} from 'dotenv'; config();
 //this allows the use of enviornmental variables coming from a .env file. 
 import './database/database.mjs';
 import express from 'express';//importing the package
+import moviesRouter from './routes/movies-router.mjs';
+import reviewsRouter from './routes/reviews-router.mjs';
+import usersRouter from './routes/users-router.mjs';
 
 
 const app = express()
@@ -25,12 +28,15 @@ app.use(express.json())
 // const reviewRoutes = require('./routes/reviewRoutes');
 
 
-////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 ///////Defines what should happen when a user visits that url "pairing the remote with your tv"
-////////////////////////////////////////////////
-// app.use('/api/users', userRoutes);
-// app.use('/api/movies', movieRoutes);
-// app.use('/api/reviews', reviewRoutes);
+//////////////////////////////////////////////////////////////////////////
+app.use('/movies', moviesRouter);
+//for all routes that require movies, look for them in here
+app.use('/users', usersRouter);
+//for all routes that require users, look for them in here
+app.use('/reviews', reviewsRouter);
+//for all routes that require reviews, look for them in here
 
 ////////////////////////////////////////////
 //////////Basic Routes 
@@ -40,6 +46,10 @@ app.get('/', (req,res) =>{
 });
 
 
+
+
+
+/////////////////////////////////////////////////
 ////////Start the Express server//App.Listen
 /////////////////////////////////////////////////
 app.listen(PORT, () => {

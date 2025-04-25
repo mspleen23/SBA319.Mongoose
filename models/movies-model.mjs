@@ -9,23 +9,9 @@ const movieSchema= new mongoose.Schema(
     year: {type: Number, required: true},
     },
   
-    { {timestamps: true }}
+    { timestamps: true }
 
 );
 
 const Movie = mongoose.model('Movie', movieSchema)
 export default Movie;
-
-
-
-
-
-
-
-
-
-
-
-
-
-mongoose.model(movies, schema)

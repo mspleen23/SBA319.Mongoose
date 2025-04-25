@@ -8,9 +8,8 @@ const userSchema= new mongoose.Schema(
     favoriteGenre: {type: String,required: true},
     age: {type: Number, required: true},
     },
-    {
-        {timestamps: true }
-    }
+    {timestamps: true }
+
 )
 
 const User = mongoose.model('User', userSchema)

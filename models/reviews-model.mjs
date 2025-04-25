@@ -7,9 +7,8 @@ const reviewSchema= new mongoose.Schema(
     rating: {type: Number, required: true}, 
     review: {type: String, required: true},
     },
-    {
-        {timestamps: true }
-    }
+    {timestamps: true }
+
    );
 
    const Review = mongoose.model('Review', reviewSchema)

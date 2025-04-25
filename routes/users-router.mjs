@@ -2,15 +2,11 @@ import express from 'express';
 import * as usersController from '../controllers/users-controller.mjs'
 const usersRouter= express.Router();
 
+////////////////////////////////////////////////////////////////////////
+///////////////  Routes/API Endpoints/CRUD/INDUCES  ////////////////////
+////////////////////////////////////////////////////////////////////////
 
-
-///////////////////////////////////////////////
-///Routes/ API Endpoints
-///////////////////////////////////////////////
-
-//All users routes; INDUCES and thier corresponding controller functions(CRUD)
-
-//////Seed//////
+                        //////Seed Routes//////
 ///seed routes helps us easily populate our database 
 usersRouter.get('/seed', usersController.seedUsers)
 

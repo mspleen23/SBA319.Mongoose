@@ -55,14 +55,30 @@ async function renderNewForm(req,res) {
 
 async function deleteUser(req,res){
         try{
-            const user = await User.findByIdAndDelete(req.params.id) 
-            res.status(301).redirect('/users')
+            const deleteUser = await User.findByIdAndDelete(req.params.id);
+            res.status(301).redirect('/users');
         }catch(error){
             res.status(400).json({error: error.message});
         }
 }
 
+async function updateUser(req,res){
+    try{
+        const updateUser= await User.findByIdAndUpdate(req.params.id,req.body);
+        res.status(301).redirect('/users');
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+    }
 
+    async function getUser(req,res){
+        try{
+            const getUser= await User.findById(req.params.id);
+            res.status(200).json(getUser);
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+    }
 
 
 export{
@@ -71,4 +87,6 @@ export{
     createUser,
     renderNewForm,
     deleteUser,
+    updateUser,
+    getUser, 
 }

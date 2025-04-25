@@ -17,17 +17,16 @@ moviesRouter.get('/seed', moviesController.seedMovies)
 //1. Index (You are getting all the movies)
 moviesRouter.get('/', moviesController.getMovies);
 
-// //New- Renders a form where the user can create a new user. Submitting this form will call the CREATE user route
-// usersRouter.get('/new', usersController.renderNewForm);
+//New- Dont need 
 
-// //Delete
-// usersRouter.delete('/:id', usersController.deleteUser);
+//Delete
+moviesRouter.delete('/:id', moviesController.deleteMovie);
 
-// //Update
-// usersRouter.put('/:id', usersController.updateUser);
+//Update
+moviesRouter.put('/:id', moviesController.updateMovie);
 
-// //Create
-// usersRouter.post('/', usersController.createUser);
+//Create
+moviesRouter.post('/', moviesController.createMovie);
 
 // //Edit- this would rendr a form similar to the userRouter.get (render new Form) 
 

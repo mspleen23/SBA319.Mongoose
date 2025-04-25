@@ -38,40 +38,32 @@ async function getMovies(req,res){
     }
 }
 
-// async function createUser(req,res){
-//     try{
-//         const user= await User.create(req.body);
-//         res.status(201).json(user);
-//     }catch(error){
-//         res.status(400).json({error: error.message});
-//     }
-// }
+async function createMovie(req,res){
+    try{
+        const movie= await Movie.create(req.body);
+        res.status(201).json(movie);
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+}
 
-// async function renderNewForm(req,res) {
-//     try{
-//         res.render('./users/new.ejs');
-//     }catch(error){
-//         res.status(400).json({error: error.message});
-//     }
-// }
+async function deleteMovie(req,res){
+        try{
+            const deleteMovie = await Movie.findByIdAndDelete(req.params.id);
+            res.status(301).redirect('/movies');
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+}
 
-// async function deleteUser(req,res){
-//         try{
-//             const deleteUser = await User.findByIdAndDelete(req.params.id);
-//             res.status(301).redirect('/users');
-//         }catch(error){
-//             res.status(400).json({error: error.message});
-//         }
-// }
-
-// async function updateUser(req,res){
-//     try{
-//         const updateUser= await User.findByIdAndUpdate(req.params.id,req.body);
-//         res.status(301).redirect('/users');
-//     }catch(error){
-//         res.status(400).json({error: error.message});
-//     }
-//     }
+async function updateMovie(req,res){
+    try{
+        const updateMovie= await Movie.findByIdAndUpdate(req.params.id,req.body);
+        res.status(301).redirect('/movies');
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+    }
 
 //     async function getUser(req,res){
 //         try{
@@ -86,9 +78,8 @@ async function getMovies(req,res){
 export{
     seedMovies,
     getMovies,
-//     createUser,
-//     renderNewForm,
-//     deleteUser,
-//     updateUser,
+    createMovie,
+    deleteMovie,
+    updateMovie,
 //     getUser, 
  }

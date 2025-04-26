@@ -34,9 +34,4 @@ moviesRouter.post('/', moviesController.createMovie);
 //Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
 moviesRouter.get('/:id', moviesController.getMovie); 
 
-
-
-
-
-
 export default moviesRouter;

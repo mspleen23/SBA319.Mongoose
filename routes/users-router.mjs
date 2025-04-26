@@ -10,7 +10,7 @@ const usersRouter= express.Router();
 ///seed routes helps us easily populate our database 
 usersRouter.get('/seed', usersController.seedUsers)
 
-//INDUCES
+ //////////////////////////INDUCES//////////////////////////
 
 //Index
 //You are getting all the users
@@ -28,15 +28,11 @@ usersRouter.put('/:id', usersController.updateUser);
 //Create
 usersRouter.post('/', usersController.createUser);
 
-//Edit- this would rendr a form similar to the userRouter.get (render new Form) 
-
+//Edit- this would rendr a form similar to the userRouter.get (render new Form)
+//Dont need this  
 
 //Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
 usersRouter.get('/:id', usersController.getUser); 
-
-
-
-
 
 
 export default usersRouter;

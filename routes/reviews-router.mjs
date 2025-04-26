@@ -18,20 +18,20 @@ reviewsRouter.get('/', reviewsController.getReviews);
 
 //New- Dont need 
 
-// //Delete
-// moviesRouter.delete('/:id', moviesController.deleteMovie);
+//Delete
+reviewsRouter.delete('/:id', reviewsController.deleteReview);
 
-// //Update
-// moviesRouter.put('/:id', moviesController.updateMovie);
+//Update
+reviewsRouter.put('/:id', reviewsController.updateReview);
 
 //Create
-reviewsRouter.post('/', reviewsController.createReviews);
+reviewsRouter.post('/', reviewsController.createReview);
 
 // //Edit- this would rendr a form similar to the userRouter.get (render new Form) 
 // //Dont need 
 
-// //Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
-// moviesRouter.get('/:id', moviesController.getMovie); 
+//Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
+reviewsRouter.get('/:id', reviewsController.getReview); 
 
 export default reviewsRouter;
 

@@ -43,7 +43,7 @@ async function getReviews(req,res){
     }
 }
 
-async function createReviews(req,res){
+async function createReview(req,res){
     try{
         const review= await Review.create(req.body);
         res.status(201).json(review);
@@ -52,39 +52,39 @@ async function createReviews(req,res){
     }
 }
 
-// async function deleteMovie(req,res){
-//         try{
-//             const deleteMovie = await Movie.findByIdAndDelete(req.params.id);
-//             res.status(301).redirect('/movies');
-//         }catch(error){
-//             res.status(400).json({error: error.message});
-//         }
-// }
+async function deleteReview(req,res){
+        try{
+            const deleteReview = await Review.findByIdAndDelete(req.params.id);
+            res.status(301).redirect('/reviews');
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+}
 
-// async function updateMovie(req,res){
-//     try{
-//         const updateMovie= await Movie.findByIdAndUpdate(req.params.id,req.body);
-//         res.status(301).redirect('/movies');
-//     }catch(error){
-//         res.status(400).json({error: error.message});
-//     }
-//     }
+async function updateReview(req,res){
+    try{
+        const updateReview= await Review.findByIdAndUpdate(req.params.id,req.body);
+        res.status(301).redirect('/reviews');
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+    }
 
-//     async function getMovie(req,res){
-//         try{
-//             const getMovie= await Movie.findById(req.params.id);
-//             res.status(200).json(getMovie);
-//         }catch(error){
-//             res.status(400).json({error: error.message});
-//         }
-    // }
+    async function getReview(req,res){
+        try{
+            const getReview= await Review.findById(req.params.id);
+            res.status(200).json(getReview);
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+    }
 
 
 export{
     seedReviews,
     getReviews,
-    createReviews,
-//     deleteMovie,
-//     updateMovie,
-//     getMovie, 
+    createReview,
+    deleteReview,
+    updateReview,
+    getReview, 
  }

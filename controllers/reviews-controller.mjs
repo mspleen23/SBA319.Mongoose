@@ -55,7 +55,7 @@ async function createReview(req,res){
 async function deleteReview(req,res){
         try{
             const deleteReview = await Review.findByIdAndDelete(req.params.id);
-            res.status(301).redirect('/reviews');
+            res.status(200).redirect('/reviews');
         }catch(error){
             res.status(400).json({error: error.message});
         }
@@ -64,7 +64,7 @@ async function deleteReview(req,res){
 async function updateReview(req,res){
     try{
         const updateReview= await Review.findByIdAndUpdate(req.params.id,req.body);
-        res.status(301).redirect('/reviews');
+        res.status(200).redirect('/reviews');
     }catch(error){
         res.status(400).json({error: error.message});
     }

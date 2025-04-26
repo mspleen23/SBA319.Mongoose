@@ -50,7 +50,7 @@ async function createMovie(req,res){
 async function deleteMovie(req,res){
         try{
             const deleteMovie = await Movie.findByIdAndDelete(req.params.id);
-            res.status(301).redirect('/movies');
+            res.status(200).redirect('/movies');
         }catch(error){
             res.status(400).json({error: error.message});
         }
@@ -59,7 +59,7 @@ async function deleteMovie(req,res){
 async function updateMovie(req,res){
     try{
         const updateMovie= await Movie.findByIdAndUpdate(req.params.id,req.body);
-        res.status(301).redirect('/movies');
+        res.status(200).redirect('/movies');
     }catch(error){
         res.status(400).json({error: error.message});
     }

@@ -65,14 +65,14 @@ async function updateMovie(req,res){
     }
     }
 
-//     async function getUser(req,res){
-//         try{
-//             const getUser= await User.findById(req.params.id);
-//             res.status(200).json(getUser);
-//         }catch(error){
-//             res.status(400).json({error: error.message});
-//         }
-//     }
+    async function getMovie(req,res){
+        try{
+            const getMovie= await Movie.findById(req.params.id);
+            res.status(200).json(getMovie);
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+    }
 
 
 export{
@@ -81,5 +81,5 @@ export{
     createMovie,
     deleteMovie,
     updateMovie,
-//     getUser, 
+    getMovie, 
  }

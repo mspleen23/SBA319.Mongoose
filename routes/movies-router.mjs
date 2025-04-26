@@ -28,11 +28,11 @@ moviesRouter.put('/:id', moviesController.updateMovie);
 //Create
 moviesRouter.post('/', moviesController.createMovie);
 
-// //Edit- this would rendr a form similar to the userRouter.get (render new Form) 
+//Edit- this would rendr a form similar to the userRouter.get (render new Form) 
+//Dont need 
 
-
-// //Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
-// usersRouter.get('/:id', usersController.getUser); 
+//Show (render a route for an individual to be seen ).We are getting a specific user instead of all the users
+moviesRouter.get('/:id', moviesController.getMovie); 
 
 
 
